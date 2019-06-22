@@ -8,9 +8,11 @@ public class BulletController : MonoBehaviour
     private Vector2 vec;
     public GameObject player;
     public GameObject enemy;
+    //public GameObject bParent;
     // Start is called before the first frame update
     void Start()
     {
+        //transform.parent = bParent.GetComponent<Transform>();
         Vector2 enemypos = enemy.GetComponent<Transform>().position;
         Vector2 playerpos = player.GetComponent<Transform>().position;
         Vector2 diff = playerpos - enemypos;

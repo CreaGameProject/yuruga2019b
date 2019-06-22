@@ -14,7 +14,7 @@ public class EnemyMove : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Bullet")
+        if (other.gameObject.tag == "PlayerBullet")
         {
             // 弾と衝突したのでダメージ処理
             Debug.Log("hit");

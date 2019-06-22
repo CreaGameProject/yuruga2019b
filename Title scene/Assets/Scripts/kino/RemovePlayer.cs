@@ -6,20 +6,22 @@ using UnityEngine.SceneManagement;
 public class RemovePlayer : MonoBehaviour
 {
     private Object Player;
+    public StageManagement stageManager = new StageManagement();
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         GameObject obj = GameObject.Find("Player");
 
-        Debug.Log("GAME OVER");        
 
         if (other.gameObject.tag == "EnemyBullet")
         {
-        
-            Destroy(obj,0.15f);
+            Debug.Log("GAME OVER");
+               
+            stageManager.GameOver();
+            // Destroy(obj,0.15f);
 
-            SceneManager.LoadScene("GameOver");
+            // SceneManager.LoadScene("GameOver");
         }
 
     }

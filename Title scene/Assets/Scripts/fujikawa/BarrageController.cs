@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BarrageController : MonoBehaviour
 {
-    public  GameObject bullet;
+    public GameObject bullet;
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Genbullet", 2f, 0.5f); 
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -16,11 +17,12 @@ public class BarrageController : MonoBehaviour
     {
         
     }
-    void Genbullet()
+    public GameObject Genbullet()
     {
         GameObject bulletIns = GameObject.Instantiate(bullet, transform.position, Quaternion.identity);
         BulletController bulletInsComp = bulletIns.GetComponent<BulletController>();
         bulletInsComp.enemy = gameObject;
-        bulletInsComp.player = GameObject.FindWithTag("Player");
+        bulletInsComp.player = player;
+        return bulletIns;
     }
 }

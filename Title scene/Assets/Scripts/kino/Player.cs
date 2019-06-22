@@ -11,11 +11,9 @@ public class Player : MonoBehaviour
     public GameObject BulletsPrefab;
 
     private Vector2 pos;
-    
      
 
     // Start is called before the first frame update
-  
 
     // Update is called once per frame
     void Update()

@@ -12,7 +12,7 @@ public class StageManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(Roll());
     }
 
     // Update is called once per frame
@@ -26,6 +26,7 @@ public class StageManagement : MonoBehaviour
     }
     
     public void GameOver(){
+        //Debug.Log("eapvrpaevearb");
         IEnumerator end = BattleEnd(Roll(), false);
         StartCoroutine(end);
     }
@@ -33,7 +34,10 @@ public class StageManagement : MonoBehaviour
     private IEnumerator Roll(){
         //gamestart
 
-
+        int a = 0;
+        while(a == 0){
+            yield return null;
+        }
 
         //clear
         IEnumerator end = BattleEnd(Roll(), true);
@@ -45,7 +49,7 @@ public class StageManagement : MonoBehaviour
         StopCoroutine(stop);
         GameObject image = clear ? clearImage : gameoverImage;
         image.SetActive(true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Titlescene");
         yield break;
     }
