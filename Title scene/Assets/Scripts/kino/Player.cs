@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         {
             count = 0;
             GameObject Bullets = Instantiate(BulletsPrefab, transform.position, transform.rotation) as GameObject;
-            Bullets.GetComponent<Rigidbody>().AddForce(Bullets.transform.forward * shootForce);
+            //Bullets.GetComponent<Rigidbody>().AddForce(Bullets.transform.forward * shootForce);
         }
         
     }
