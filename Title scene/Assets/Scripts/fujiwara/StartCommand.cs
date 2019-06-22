@@ -14,7 +14,7 @@ public class StartCommand : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("BattleScene");  //シーン移動
+            SceneManager.LoadScene("Battlescene");  //シーン移動
         }
     }
 
