@@ -45,22 +45,23 @@ public class StageManagement : MonoBehaviour
 
     private IEnumerator Roll(){        
         //gamestart
+
     //     藤川
     //     yield return wait(3);
     //     GameObject f1=EnemySummon()
 
-    //     GameObject a1 = EnemySummon(-3,6);
-    //     GameObject a2 = EnemySummon(-4,6);
-    //     Move(a1).speed = 3;
-    //     Move(a2).speed = 3;
-    //     Move(a1).direction = 210;
-    //     Move(a2).direction = 210;
-    //     yield return wait(1);
-    //     shot(a1);
-    //     shot(a2);
-    //     yield return wait(3);
-    //     Destroy(a1);
-    //     Destroy(a2);
+        // GameObject a1 = EnemySummon(-3,6);
+        // GameObject a2 = EnemySummon(-4,6);
+        // Move(a1).speed = 3;
+        // Move(a2).speed = 3;
+        // Move(a1).direction = 210;
+        // Move(a2).direction = 210;
+        // yield return wait(1);
+        // shot(a1);
+        // shot(a2);
+        // yield return wait(3);
+        // Destroy(a1);
+        // Destroy(a2);
 
     //     木野
     //     yield return wait(3);
