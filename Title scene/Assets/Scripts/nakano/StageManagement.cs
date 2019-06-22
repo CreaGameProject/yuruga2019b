@@ -31,21 +31,62 @@ public class StageManagement : MonoBehaviour
         StartCoroutine(end);
     }
 
-    private IEnumerator Roll(){
-        //gamestart
+    private EnemyMove Move(GameObject enemy){
+        return enemy.GetComponent<EnemyMove>();
+    }
 
-        int a = 0;
-        while(a == 0){
-            yield return null;
-        }
+    private IEnumerator wait(float second){
+        yield return new WaitForSeconds(second);
+    }
+
+    private GameObject shot(GameObject enemy){
+        return enemy.GetComponent<BarrageController>().Genbullet();
+    }
+
+    private IEnumerator Roll(){        
+        //gamestart
+    //     藤川
+    //     yield return wait(3);
+    //     GameObject f1=EnemySummon()
+
+    //     GameObject a1 = EnemySummon(-3,6);
+    //     GameObject a2 = EnemySummon(-4,6);
+    //     Move(a1).speed = 3;
+    //     Move(a2).speed = 3;
+    //     Move(a1).direction = 210;
+    //     Move(a2).direction = 210;
+    //     yield return wait(1);
+    //     shot(a1);
+    //     shot(a2);
+    //     yield return wait(3);
+    //     Destroy(a1);
+    //     Destroy(a2);
+
+    //     木野
+    //     yield return wait(3);
+    //     GameObject b1 = EnemySummon(-4,5);
+    //     GameObject b2 = EnemySummon(-4,3);
+    //    GameObject b3 = EnemySummon()
+
+
+    //     中野
+    //     yield return wait(1);
+    //     GameObject n1 = EnemySummon(-5, 8);
+    //     nnseta = 
+    //     Vector2 nn1 = n1.GetComponent<Transform>().position + new Vector2();
+        
 
         //clear
+
         IEnumerator end = BattleEnd(Roll(), true);
         StartCoroutine(end);
         yield break;
     }
 
     private IEnumerator BattleEnd(IEnumerator stop, bool clear){
+        foreach(GameObject d in GameObject.FindGameObjectsWithTag("EnemyBullet")){
+            Destroy(d);
+        }
         StopCoroutine(stop);
         GameObject image = clear ? clearImage : gameoverImage;
         image.SetActive(true);
