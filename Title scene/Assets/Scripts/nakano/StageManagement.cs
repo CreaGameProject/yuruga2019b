@@ -46,7 +46,7 @@ public class StageManagement : MonoBehaviour
         GameObject image = clear ? clearImage : gameoverImage;
         image.SetActive(true);
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene("Titlescene");
         yield break;
     }
 }
