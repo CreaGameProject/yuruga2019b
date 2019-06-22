@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 5;
-    public GameObject bullet;
+    int count = 0;
+    int interval = 15;
+    public float speed;
+    public float shootForce;
+    public GameObject BulletsPrefab;
     // Start is called before the first frame update
-    IEnumerator Start()
-    {
-      while (true)
-       {
-                Instantiate(bullet, transform.position, transform.rotation);
-                yield return new WaitForSeconds(0.3f);
-       }
-        
-    }
-
+   
     // Update is called once per frame
     void Update()
     {
@@ -24,6 +18,14 @@ public class Player : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical");
         Vector2 direction = new Vector2(x, y).normalized;
         GetComponent<Rigidbody2D>().velocity = direction * speed;
+
+        count += count < interval ? 1 : 0;
+        if (Input.GetKey(KeyCode.Z) && count >= interval)
+        {
+            count = 0;
+            GameObject Bullets = Instantiate(BulletsPrefab, transform.position, transform.rotation) as GameObject;
+            Bullets.GetComponent<Rigidbody>().AddForce(Bullets.transform.forward * shootForce);
+        }
         
     }
 }
