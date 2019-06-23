@@ -43,12 +43,12 @@ public class StageManagement : MonoBehaviour
         return enemy.GetComponent<BarrageController>().Genbullet();
     }
 
-    private IEnumerator Roll(){        
+    private IEnumerator Roll(){
         //gamestart
 
-    //     藤川
-    //     yield return wait(3);
-    //     GameObject f1=EnemySummon()
+        //     藤川
+        //     yield return wait(3);
+        //     GameObject f1=EnemySummon()
 
         // GameObject a1 = EnemySummon(-3,6);
         // GameObject a2 = EnemySummon(-4,6);
@@ -63,19 +63,44 @@ public class StageManagement : MonoBehaviour
         // Destroy(a1);
         // Destroy(a2);
 
-    //     木野
-    //     yield return wait(3);
-    //     GameObject b1 = EnemySummon(-4,5);
-    //     GameObject b2 = EnemySummon(-4,3);
-    //    GameObject b3 = EnemySummon()
-
-
-    //     中野
-    //     yield return wait(1);
-    //     GameObject n1 = EnemySummon(-5, 8);
-    //     nnseta = 
-    //     Vector2 nn1 = n1.GetComponent<Transform>().position + new Vector2();
+        //     木野
         
+        yield return wait(2);
+        GameObject b1 = EnemySummon(-6,5);
+        Move(b1).speed = 3;
+        Move(b1).direction = 270;
+        yield return wait(1);
+        GameObject b2 = EnemySummon(-3,5);
+        Move(b2).speed = 3;
+        Move(b2).direction = 270;
+        shot(b1);
+        yield return wait(1);
+        GameObject b3 = EnemySummon(-6, 5);
+        Move(b3).speed = 3;
+        Move(b3).direction = 270;
+        shot(b2);
+        yield return wait(1);
+        GameObject b4 = EnemySummon(-3, 5);
+        Move(b4).speed = 3;
+        Move(b4).direction = 270;
+        shot(b3);
+        yield return wait(1);
+        shot(b4);
+        yield return wait(4);
+        Destroy(b1);
+        Destroy(b2);
+        Destroy(b3);
+        Destroy(b4);
+        yield return wait(1);
+        
+
+
+        //     中野
+        //     yield return wait(1);
+        //     GameObject n1 = EnemySummon(-5, 8);
+        //     nnseta = 
+        //     Vector2 nn1 = n1.GetComponent<Transform>().position + new Vector2();
+
 
         //clear
 
