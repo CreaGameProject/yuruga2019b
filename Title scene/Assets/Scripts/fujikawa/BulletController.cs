@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    private float speed = 0.1f;
-    private Vector2 vec;
+    public float speed = 0.1f;
+    public Vector2 vec;
     public GameObject player;
     public GameObject enemy;
     //public GameObject bParent;
